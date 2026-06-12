@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conflict Issue Network Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="topnav">
+  <div class="nav-inner">
+    <span class="nav-brand">Conflict Issue Network Atlas</span>
+    <ul class="nav-links">
+      <li><a href="#question">Question</a></li>
+      <li><a href="#pivot">Pivot</a></li>
+      <li><a href="#data">Data</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="question" class="hero section">
+  <div class="container">
+    <div class="hero-graphic" aria-hidden="true">
+      <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <line x1="120" y1="80" x2="300" y2="150" /><line x1="300" y1="150" x2="480" y2="90" />
+        <line x1="300" y1="150" x2="200" y2="240" /><line x1="300" y1="150" x2="420" y2="220" />
+        <line x1="120" y1="80" x2="200" y2="240" /><line x1="480" y1="90" x2="420" y2="220" />
+        <circle cx="120" cy="80" r="10"/><circle cx="480" cy="90" r="8"/>
+        <circle cx="300" cy="150" r="16" class="node-hub"/>
+        <circle cx="200" cy="240" r="9"/><circle cx="420" cy="220" r="11"/>
+      </svg>
+    </div>
+    <h1 class="hero-title">Conflict Issue Network Atlas</h1>
+    <p class="hero-subtitle">Mapping Stated Conflict Issues and Structural Conditions in Armed Conflicts, 1989&ndash;2017</p>
+    <p class="hero-lead">Why do similar conflict claims reappear across different wars?</p>
+    <p class="hero-body">This project began with a question about contemporary geopolitical tensions. Are modern conflicts truly unique, or do they repeat older patterns of political exclusion, foreign influence, self-determination, and institutional crisis?</p>
+    <p class="hero-thesis">Conflict issues do not appear as isolated causes. They form networks.</p>
+  </div>
+</header>
+
+<!-- PIVOT -->
+<section id="pivot" class="section">
+  <div class="container">
+    <span class="kicker">Research Pivot</span>
+    <h2>From Root Causes to Stated Issues</h2>
+    <p>The UCDP Conflict Issues Dataset does not reveal hidden motives. It records stated issues: the claims, demands, and grievances that conflict actors publicly express.</p>
+    <p>Therefore, this project does not claim to discover the final cause of each war. It maps the visible structure of conflict claims.</p>
+    <table class="data-table">
+      <thead><tr><th>Initial Idea</th><th>Final Focus</th></tr></thead>
+      <tbody>
+        <tr><td>Find the true causes of war</td><td>Map stated conflict issues</td></tr>
+        <tr><td>Cluster wars by root motivation</td><td>Analyze issue co-occurrence networks</td></tr>
+        <tr><td>Explain why wars happen</td><td>Study how conflict claims are structured</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">This pivot makes the project more accurate and defensible.</div>
+  </div>
+</section>
+
+<!-- DATA -->
+<section id="data" class="section alt">
+  <div class="container">
+    <span class="kicker">Data</span>
+    <h2>1,208 Active Conflict Dyad-Years</h2>
+    <div class="two-col">
+      <table class="data-table">
+        <tbody>
+          <tr><td>Period</td><td class="num">1989&ndash;2017</td></tr>
+          <tr><td>Unit</td><td class="num">Active conflict dyad-year</td></tr>
+          <tr><td>Observations</td><td class="num">1,208</td></tr>
+          <tr><td>Unique dyads</td><td class="num">345</td></tr>
+          <tr><td>Unique conflicts</td><td class="num">160</td></tr>
+          <tr><td>Main dataset</td><td class="num">UCDP Conflict Issues Dataset</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box">
+        <h4>What is a dyad-year?</h4>
+        <p>A dyad is a pair of conflict actors, such as a government and a rebel group. A dyad-year means one conflict actor pair observed in one specific year. If the same conflict continues for five years, it becomes five dyad-year observations.</p>
+      </div>
+    </div>
+    <h3>Main Data Sources</h3>
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Role in Project</th></tr></thead>
+      <tbody>
+        <tr><td>UCDP CID</td><td>Main stated issue data</td></tr>
+        <tr><td>UCDP Dyadic</td><td>Active conflict dyad-year spine</td></tr>
+        <tr><td>UCDP GED</td><td>Event and fatality context</td></tr>
+        <tr><td>EPR</td><td>Ethnic exclusion and regional autonomy</td></tr>
+        <tr><td>V-Dem</td><td>Democracy, civil liberties, social-group exclusion</td></tr>
+        <tr><td>UCDP External Support</td><td>Foreign support context</td></tr>
+        <tr><td>UCDP Peace Agreements</td><td>Peace-process context</td></tr>
+        <tr><td>UCDP One-sided Violence</td><td>Civilian-targeted violence context</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method" class="section">
+  <div class="container">
+    <span class="kicker">Method</span>
+    <h2>Turning Conflict Claims into a Network</h2>
+    <p>Each stated issue becomes a node. Two issues are connected when they appear in the same dyad-year. The more often they appear together, the stronger the edge.</p>
+    <div class="flow">
+      <div class="flow-step">UCDP stated issues</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">binary issue matrix</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">issue co-occurrence network</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">central issues + bridge issues + communities</div>
+      <div class="flow-arrow">&darr;</div>
+      <div class="flow-step">context comparison</div>
+    </div>
+    <div class="callout">
+      <span class="co-pair">Atrocities and abuses &mdash;192&mdash; Call for negotiations</span><br>
+      These two issues appeared together in 192 dyad-year observations.
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Metric</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>Weighted degree</td><td>How often an issue appears with other issues</td></tr>
+        <tr><td>Betweenness centrality</td><td>How strongly an issue bridges different issue families</td></tr>
+        <tr><td>Community detection</td><td>Which issues repeatedly group together</td></tr>
+        <tr><td>Mean difference</td><td>How a context variable changes when an issue is present</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FINDING 1 -->
+<section id="findings" class="section alt">
+  <div class="container">
+    <span class="kicker">Finding 1</span>
+    <h2>Conflict Issues Form Networks</h2>
+    <figure>
+      <img src="assets/01_top_central_issues.png" alt="Central stated issues chart" class="zoomable">
+      <figcaption>Most central stated issues by weighted degree.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/02_bridge_issues_betweenness.png" alt="Bridge issues by betweenness centrality" class="zoomable">
+      <figcaption>Bridge issues ranked by betweenness centrality.</figcaption>
+    </figure>
+    <div class="two-col">
+      <div>
+        <h3>Most Central Issues</h3>
+        <table class="data-table">
+          <thead><tr><th>Rank</th><th>Central Issue</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Atrocities and abuses</td><td>Main bridge issue</td></tr>
+            <tr><td>2</td><td>Call for negotiations</td><td>Peace-process claim</td></tr>
+            <tr><td>3</td><td>CPS: Democracy</td><td>Political order / reform claim</td></tr>
+            <tr><td>4</td><td>Civil rights</td><td>Rights-based conflict claim</td></tr>
+            <tr><td>5</td><td>Oust full executive</td><td>Regime-change claim</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Strongest Co-Occurrences</h3>
+        <table class="data-table">
+          <thead><tr><th>Pair of Issues</th><th class="num">Count</th></tr></thead>
+          <tbody>
+            <tr><td>Atrocities and abuses + Call for negotiations</td><td class="num">192</td></tr>
+            <tr><td>Call for negotiations + Structure of negotiations</td><td class="num">191</td></tr>
+            <tr><td>Atrocities and abuses + CPS: Democracy</td><td class="num">161</td></tr>
+            <tr><td>CPS: Democracy + Call for negotiations</td><td class="num">155</td></tr>
+            <tr><td>Civil rights + CPS: Democracy</td><td class="num">150</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="callout important">
+      &ldquo;Atrocities and abuses&rdquo; is not interpreted as the root cause of war. It functions as a bridge issue that connects different families of conflict claims.
+    </div>
+  </div>
+</section>
+
+<!-- FINDING 2 -->
+<section class="section">
+  <div class="container">
+    <span class="kicker">Finding 2</span>
+    <h2>Three Issue Communities</h2>
+    <figure>
+      <img src="assets/03_community_context_heatmap.png" alt="Community context heatmap" class="zoomable">
+      <figcaption>Context conditions across the three issue communities.</figcaption>
+    </figure>
+    <table class="data-table">
+      <thead><tr><th>Community</th><th>Description</th><th>Key Issues</th></tr></thead>
+      <tbody>
+        <tr><td>Community 1</td><td>Political order / rights / reforms</td><td>Democracy, civil rights, economic reforms, constitutional issues, public services</td></tr>
+        <tr><td>Community 2</td><td>Violence / regime / foreign influence</td><td>Atrocities and abuses, executive removal, foreign influence, Islamic state</td></tr>
+        <tr><td>Community 3</td><td>Negotiation / accountability / self-determination</td><td>Negotiations, accountability, prisoners, independence, ceasefire</td></tr>
+      </tbody>
+    </table>
+    <p>These communities should not be read as final categories of war causes. They are recurring constellations of stated issues.</p>
+  </div>
+</section>
+
+<!-- FINDING 3 -->
+<section class="section alt">
+  <div class="container">
+    <span class="kicker">Finding 3</span>
+    <h2>Stated Issues Align with Structural Conditions</h2>
+    <figure>
+      <img src="assets/05_selected_issue_context_heatmap.png" alt="Selected issue context heatmap" class="zoomable">
+      <figcaption>Association between selected stated issues and structural context variables.</figcaption>
+    </figure>
+    <table class="data-table">
+      <thead><tr><th>Stated Issue</th><th>Linked Context</th><th class="num">Difference</th></tr></thead>
+      <tbody>
+        <tr><td>Independence</td><td>Ethnic exclusion</td><td class="num pos">+0.357</td></tr>
+        <tr><td>Independence</td><td>Regional autonomy</td><td class="num pos">+0.341</td></tr>
+        <tr><td>CPS: Democracy</td><td>Civil liberties</td><td class="num neg">&minus;0.110</td></tr>
+        <tr><td>CPS: Democracy</td><td>Electoral democracy</td><td class="num neg">&minus;0.096</td></tr>
+        <tr><td>DFI: Removal of foreign influence</td><td>External support</td><td class="num pos">+0.117</td></tr>
+        <tr><td>Call for negotiations</td><td>Peace agreement year</td><td class="num pos">+0.073</td></tr>
+        <tr><td>Atrocities and abuses</td><td>One-sided violence</td><td class="num pos">+0.009</td></tr>
+      </tbody>
+    </table>
+    <p>These values are descriptive associations. They show how much higher or lower a context variable is when a stated issue appears.</p>
+    <ul class="interp-list">
+      <li>Independence claims are strongly associated with ethnic exclusion and regional autonomy.</li>
+      <li>Democracy claims appear in contexts with lower democracy and civil liberties.</li>
+      <li>Foreign-influence removal claims align with actual external support.</li>
+      <li>Negotiation claims align with peace agreement years.</li>
+      <li>Atrocities and abuses are central in the network, but only weakly associated with one-sided violence in this setup.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection" class="section">
+  <div class="container">
+    <span class="kicker">Critical Reflection</span>
+    <h2>What the Data Can and Cannot Say</h2>
+    <ul class="interp-list">
+      <li>The project maps stated issues, not hidden motives.</li>
+      <li>A central issue is not necessarily a root cause.</li>
+      <li>Co-occurrence is not causation.</li>
+      <li>Quantification reveals broad patterns but reduces historical nuance.</li>
+      <li>The results should guide interpretation, not replace close reading.</li>
+    </ul>
+    <div class="callout important">
+      This project treats conflict data as a structured record of claims, not as a transparent window into historical truth.
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section id="conclusion" class="section alt">
+  <div class="container">
+    <span class="kicker">Conclusion</span>
+    <h2>Networks, Not Single Causes</h2>
+    <figure>
+      <img src="assets/00_conclusion_dashboard.png" alt="Conclusion dashboard summary" class="zoomable">
+      <figcaption>Summary dashboard of the project's main findings.</figcaption>
+    </figure>
+    <p class="big-claim">Armed conflicts are better understood not as isolated single causes, but as recurring networks of claims shaped by political and structural conditions.</p>
+    <p>This project offers a digital humanities map of conflict claims rather than a final explanation of war.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Conflict Issue Network Atlas &middot; A Digital Humanities Project &middot; Data: UCDP, EPR, V-Dem</p>
+  </div>
+</footer>
+
+<!-- Image modal -->
+<div id="modal" class="modal" aria-hidden="true">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modal-img" alt="Expanded view">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
