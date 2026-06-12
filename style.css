@@ -203,6 +203,35 @@ h1, h2, h3, h4, p, li, td, th, figcaption {
   margin-bottom: 8px;
 }
 
+.conclusion-evidence {
+  margin: 34px 0 26px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+.section.alt .conclusion-evidence {
+  background: rgba(247, 248, 250, 0.8);
+}
+.conclusion-evidence h3 {
+  margin-top: 0;
+}
+.conclusion-evidence > p {
+  max-width: 76ch;
+}
+.wide-evidence {
+  margin-top: 20px;
+}
+.evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.evidence-grid figure {
+  margin-top: 8px;
+}
+
 /* TABLES */
 .data-table {
   width: 100%;
@@ -338,7 +367,8 @@ footer p { color: var(--muted); font-size: 0.85rem; margin: 0 auto; }
   .two-col,
   .card-grid.three,
   .answer-grid,
-  .conclusion-panels { grid-template-columns: 1fr; }
+  .conclusion-panels,
+  .evidence-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 12px; }
   .nav-links a { font-size: 0.78rem; }
   .section { padding: 50px 0; }
